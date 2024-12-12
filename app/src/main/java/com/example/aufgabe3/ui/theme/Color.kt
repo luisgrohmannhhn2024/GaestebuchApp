@@ -2,6 +2,15 @@ package com.example.aufgabe3.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Theme Colors:
+ * Defines the color palette for the application's theme.
+ *
+ * Colors are split into two categories:
+ * - "80" series: Typically used for lighter or emphasized UI elements.
+ * - "40" series: Typically used for darker or subdued UI elements.
+ */
+
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)

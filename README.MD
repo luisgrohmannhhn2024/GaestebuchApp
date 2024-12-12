@@ -66,6 +66,6 @@ Es soll eine Android-App mit Jetpack Compose entwickeln, die folgende Funktionen
 - **Dokumentation:**
     - Es wird empfohlen, die offizielle Android-Dokumentation zu Jetpack Compose zu verwenden.
 
+**Viel Erfolg bei der Umsetzung der Aufgabe!**
 ---
 
-**Viel Erfolg bei der Umsetzung der Aufgabe!**

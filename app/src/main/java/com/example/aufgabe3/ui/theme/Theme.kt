@@ -15,18 +15,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+// Define the color scheme for Dark Theme
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = Purple80,        // Primary color for dark mode
+    secondary = PurpleGrey80,  // Secondary color for dark mode
+    tertiary = Pink80          // Tertiary color for dark mode
 )
 
+// Define the color scheme for Light Theme
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = Purple40,        // Primary color for light mode
+    secondary = PurpleGrey40,  // Secondary color for light mode
+    tertiary = Pink40          // Tertiary color for light mode
 
-    /* Other default colors to override
+    /* Other default colors can be overridden here, e.g.,
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
     onPrimary = Color.White,
@@ -37,10 +39,18 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+/**
+ * Aufgabe3Theme:
+ * Sets up the theme for the application, including support for light and dark modes,
+ * and dynamic colors on Android 12+ devices.
+ *
+ * @param darkTheme Whether the app should use the dark theme. Defaults to system settings.
+ * @param dynamicColor Enables dynamic colors for Android 12+ (e.g., Material You).
+ * @param content The Composable content to apply the theme to.
+ */
 @Composable
 fun Aufgabe3Theme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
@@ -49,19 +59,22 @@ fun Aufgabe3Theme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
+
+    // Set the status bar color and light/dark appearance for system bars
+
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            window.statusBarColor = colorScheme.primary.toArgb() // Set status bar color
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme // Adjust system bar appearance
         }
     }
 
+    // Apply the MaterialTheme with the chosen color scheme and typography
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,

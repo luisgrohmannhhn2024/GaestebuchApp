@@ -11,6 +11,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.aufgabe3.navigation.AppNavHost
 import com.example.aufgabe3.ui.theme.Aufgabe3Theme
 
+/**
+ * MainActivity:
+ * The entry point of the application, responsible for setting up the UI and applying the theme.
+ */
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,4 +32,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
