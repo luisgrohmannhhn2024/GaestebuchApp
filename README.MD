@@ -1,3 +1,7 @@
+# Name: Luis Grohmann
+# Matr-Nummer: 216067
+
+
 # Bewertungsschema für die Programmieraufgabe
 
 **Gesamtpunktzahl: 10 Punkte**
